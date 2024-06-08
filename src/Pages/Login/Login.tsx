@@ -1,14 +1,19 @@
 import { VisibilityOff, Visibility } from '@mui/icons-material';
 import { Checkbox } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import InputWithLogo from '../../Components/InputWithLogo/InputWithLogo';
 import InputAdornment from '../../Components/InputWithLogo/InputAdornment/InputAdornment';
 import Button from '../../Components/Button/Button';
 import { useLoginMutation } from '../../api/auth';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../state/user';
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [login, { error, isLoading, isSuccess, data }] = useLoginMutation();
+  const [login, { isLoading, isSuccess, data }] = useLoginMutation();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const {
     handleSubmit,
     control,
@@ -19,9 +24,15 @@ const Login = () => {
       username: '',
     },
   });
+  useEffect(() => {
+    if (isSuccess) {
+      if (data) dispatch(setUser(data));
+      navigate('/home');
+    }
+  }, [data]);
+
   const onSubmit = async (data: any) => {
     await login(data);
-    console.log('data', data);
   };
   return (
     <div className="w-screen h-screen bg-background-login overflow-auto grid grid-cols-2 mobile:grid-cols-1 ">

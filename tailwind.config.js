@@ -29,6 +29,7 @@ module.exports = {
       colors: {
         background: {
           login: '#F8FCFF',
+          main: '#F5F6FA',
           components: {
             input: 'white',
           },

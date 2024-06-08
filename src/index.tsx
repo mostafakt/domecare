@@ -9,6 +9,7 @@ import { StyledEngineProvider } from '@mui/material';
 import { Provider } from 'react-redux';
 import { Toaster } from 'react-hot-toast';
 import { store } from './state';
+import PrivateRoutes from './Routes/PrivateRoute';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -20,6 +21,7 @@ root.render(
         <BrowserRouter>
           <Toaster />
           <Routing />
+          <PrivateRoutes />
         </BrowserRouter>
       </StyledEngineProvider>
     </Provider>

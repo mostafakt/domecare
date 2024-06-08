@@ -14,7 +14,6 @@ const Routing = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
       <Route path="/login" element={<Login />} />
     </Routes>
   );

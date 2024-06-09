@@ -27,6 +27,8 @@ const Login = () => {
   });
   useEffect(() => {
     if (isSuccess) {
+      console.log(data);
+
       if (data) dispatch(setUser(data));
       navigate('/home');
     }

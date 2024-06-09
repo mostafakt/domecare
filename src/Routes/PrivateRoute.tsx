@@ -6,8 +6,6 @@ import MainPage from '../Pages/MainPage/MainPage';
 import { SideBarPages } from '../layouts/config';
 import AddServices from '../Pages/Services/AddServices';
 const PrivateRoute = () => {
-  const location = useLocation();
-
   return (
     <Routes>
       <Route element={<AuthLayout />}>
@@ -16,14 +14,6 @@ const PrivateRoute = () => {
         ))}
         <Route path={'/home/services/add'} element={<AddServices />} />
       </Route>
-      <Route
-        path="*"
-        element={
-          <>
-            <Navigate to="/login" state={{ from: location }} replace />;
-          </>
-        }
-      />
     </Routes>
   );
 };

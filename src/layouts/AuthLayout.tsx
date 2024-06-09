@@ -11,7 +11,7 @@ const AuthLayout = () => {
   const location = useLocation();
   const navigate = useNavigate();
   if (!localStorage.getItem(ACCESS_TOKEN)) {
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    return <Navigate to="/" state={{ from: location }} replace />;
   }
   useEffect(() => {
     const pathSegments = location.pathname.split('/');

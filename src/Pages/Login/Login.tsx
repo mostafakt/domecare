@@ -9,6 +9,7 @@ import { useLoginMutation } from '../../api/auth';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../state/user';
+import { ACCESS_TOKEN } from '../../utils/constants';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -27,7 +28,7 @@ const Login = () => {
   });
   useEffect(() => {
     if (isSuccess) {
-      console.log(data);
+      // localStorage.setItem(ACCESS_TOKEN, data?.token ?? '');
 
       if (data) dispatch(setUser(data));
       navigate('/home');

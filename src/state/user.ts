@@ -27,11 +27,11 @@ export const userSlice = createSlice({
       state.user = action.payload;
       state.isAuthenticated = true;
       state.accessToken = action.payload.token;
-      localStorage.setItem(ACCESS_TOKEN, action.payload.token);
+      localStorage.setItem(ACCESS_TOKEN, action.payload.token ?? '');
     },
   },
 });
 
 export const { setTokens, setUser } = userSlice.actions;
 
-export default {};
+export default userSlice.reducer;

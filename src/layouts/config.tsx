@@ -24,7 +24,7 @@ export const SideBarPages: {
   },
   {
     name: 'Inanitions',
-    icon: '/icons/process/inanitions.svg',
+    icon: '/icons/process/service2.svg',
     link: '/inanitions',
     selected: false,
     component: <>Inanitions</>,

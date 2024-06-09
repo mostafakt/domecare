@@ -22,7 +22,7 @@ const NavBar = () => {
         </IconButton>
         <IconButton className="bg-white">
           <img
-            src="/icons/process/ic_user.svg"
+            src="/icons/process/service1.svg"
             className="w-[20px] h-[20px]"
             alt=""
           />

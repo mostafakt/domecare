@@ -1,3 +1,5 @@
+const { collapseClasses } = require('@mui/material');
+
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   important: '#root',
@@ -30,8 +32,13 @@ module.exports = {
         background: {
           login: '#F8FCFF',
           main: '#F5F6FA',
+          heighLight: '#EBF3FF',
           components: {
             input: 'white',
+            arrow: '#A5B0B8',
+            collapse_content: '#F5F9FF',
+            collapse_content_border: '#C3DAFF',
+            collapse_content_subService: '#EBF3FF',
           },
         },
         text: { primary: '#3B86FF', error: 'red' },

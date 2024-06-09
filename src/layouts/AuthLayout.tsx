@@ -42,9 +42,9 @@ const AuthLayout = () => {
     navigate(sideBar[index].link);
   };
   return (
-    <div className="w-screen h-screen bg-background-main ">
+    <div className="w-screen h-screen bg-background-main overflow-auto ">
       <NavBar />
-      <div className="flex px-[20px] justify-between">
+      <div className="grid mobile:grid-cols-1 grid-cols-[320px_1fr] gap-x-12 px-[20px] justify-between">
         {/* sidebar */}
         <div>
           <div className="bg-white w-[300px] rounded-lg py-[20px] pl-[20px] flex flex-col  ">
@@ -111,8 +111,6 @@ const AuthLayout = () => {
         <div>
           <Outlet />
         </div>
-        {/* contact us */}
-        <div></div>
       </div>
     </div>
   );

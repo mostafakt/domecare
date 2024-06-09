@@ -46,7 +46,7 @@ const AuthLayout = () => {
       <NavBar />
       <div className="grid mobile:grid-cols-1 grid-cols-[320px_1fr] gap-x-12 px-[20px] justify-between">
         {/* sidebar */}
-        <div>
+        <div className="mobile:hidden">
           <div className="bg-white w-[300px] rounded-lg py-[20px] pl-[20px] flex flex-col  ">
             {/* profile */}
             <div className="flex  items-center justify-between pr-[20px]">

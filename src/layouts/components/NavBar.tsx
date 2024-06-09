@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <div className=" sticky px-[50px] py-[12px] flex justify-between items-center flex-row-reverse ">
       {/* buttons */}
-      <div className="flex gap-2">
+      <div className="flex gap-2  mobile:hidden">
         <IconButton className="bg-white">
           <img
             src="/icons/process/chat.svg"
@@ -23,6 +23,15 @@ const NavBar = () => {
         <IconButton className="bg-white">
           <img
             src="/icons/process/service1.svg"
+            className="w-[20px] h-[20px]"
+            alt=""
+          />
+        </IconButton>
+      </div>{' '}
+      <div className="hidden mobile:flex gap-2">
+        <IconButton className="bg-white">
+          <img
+            src="/icons/process/chat.svg"
             className="w-[20px] h-[20px]"
             alt=""
           />

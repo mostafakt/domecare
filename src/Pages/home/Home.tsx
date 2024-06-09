@@ -9,9 +9,9 @@ const Home = () => {
   const scrollProducts = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="w-full h-full flex ">
+    <div className="w-full h-full grid grid-cols-[1fr_200px] gap-x-6 mobile:grid-cols-1 ">
       {/* content */}
-      <div className=" w-2/3 flex  flex-col gap-3 ">
+      <div className="  flex  flex-col gap-3 ">
         <Breadcrumb
           mainPage={{
             icon: <HomeIcon className="fill-primary" />,
@@ -75,6 +75,47 @@ const Home = () => {
             ))}
           </div>
         </ContentCard>
+      </div>
+      {/* profile */}
+      <div className=" ">
+        <div className=" flex flex-col bg-white h-[500px] rounded-lg">
+          <img src="/images/profile.png" alt="" />
+          <div className="flex flex-col px-3 mt-5">
+            <div className="">Lorem Ipsum</div>
+            <div className=" text-gray-400 text-[12px]">
+              Lorem Ipsum dolor sit amit
+            </div>
+            <div className=" w-full h-[2px] bg-background-main my-[5px] "></div>
+            <div className=" font-extrabold w-fit mt-3">
+              <div>Contact us</div>
+              <div className=" bg-primary h-[4px]  rounded-2xl w-[30px] rotat "></div>
+            </div>
+            <div className=" font-extrabold w-full flex justify-between mt-3 items-center ">
+              <img src="/icons/process/ic_phone.svg" alt="" />
+              <div className="text-[12px] ">+963 123 456 789 </div>
+            </div>
+            <div className=" font-extrabold w-full flex justify-between mt-3 items-center ">
+              <img src="/icons/process/ic_linkedin.svg" alt="" />
+              <div className=" text-[12px] "> Lorem Ipsum dolor sit </div>
+            </div>
+            <div className=" font-extrabold w-full flex justify-between mt-3 items-center ">
+              <img src="/icons/process/ic_instagram.svg" alt="" />
+              <div className=" text-[12px] "> Lorem Ipsum dolor sit </div>
+            </div>
+            <div className=" font-extrabold w-full flex justify-between mt-3 items-center ">
+              <img src="/icons/process/ic_facebook.svg" alt="" />
+              <div className=" text-[12px] "> Lorem Ipsum dolor sit </div>
+            </div>
+            <div className=" font-extrabold w-full flex justify-between mt-3 items-center ">
+              <img src="/icons/process/ic_linkedin.svg" alt="" />
+              <div className=" text-[12px] "> Lorem Ipsum dolor sit </div>
+            </div>
+            <div className=" font-extrabold w-full flex justify-between mt-3 items-center ">
+              <img src="/icons/process/ic_instagram.svg" alt="" />
+              <div className=" text-[12px] "> Lorem Ipsum dolor sit </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

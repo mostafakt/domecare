@@ -86,7 +86,7 @@ const Home = () => {
       </div>
       {/* profile */}
       <div className=" ">
-        <div className=" flex flex-col bg-white h-[500px] rounded-lg relative">
+        <div className=" flex flex-col bg-white h-[500px] rounded-lg relative mobile:hidden ">
           <div className=" absolute top-[235px] right-0 h-[30px] cursor-pointer flex items-center rounded-l-[100px] justify-center w-[50px] bg-primary ">
             <EditSvg style="fill-white" />
           </div>

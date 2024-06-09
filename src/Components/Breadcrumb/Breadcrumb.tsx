@@ -46,7 +46,7 @@ const Breadcrumb = ({ ParentPages, mainPage, currentPage }: IBreadcrumb) => {
       />
       {ParentPages.map((p) => (
         <Link
-          className="!m-0 font-[Comfortaa] text text-[12px]"
+          className="!m-0 font-[Comfortaa]  text-[12px]"
           underline="hover"
           color="inherit"
           href={p.link}
@@ -55,7 +55,7 @@ const Breadcrumb = ({ ParentPages, mainPage, currentPage }: IBreadcrumb) => {
         </Link>
       ))}
       <Typography
-        className="!m-0 font-[Comfortaa] text text-[12px]"
+        className="!m-0 font-[Comfortaa] pt-[8px] text-[12px]"
         color="text.primary"
       >
         {currentPage}

@@ -1,13 +1,13 @@
 import Home from '../Pages/home/Home';
 import Process from '../Pages/home/Home';
-
-export const SideBarPages: {
+export interface ISidebar {
   name: string;
   icon: string;
   link: string;
   selected?: boolean;
   component: JSX.Element;
-}[] = [
+}
+export const SideBarPages: ISidebar[] = [
   {
     name: 'Home',
     icon: '/icons/process/home-enabled.svg',

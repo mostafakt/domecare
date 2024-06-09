@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { ILoginResponse } from '../types/login';
+import { ACCESS_TOKEN } from '../utils/constants';
 
 export interface UserState {
   isAuthenticated?: boolean;
@@ -10,7 +11,7 @@ export interface UserState {
 
 const initialState: UserState = {
   isAuthenticated: !false,
-  accessToken: '',
+  accessToken: localStorage.getItem(ACCESS_TOKEN) ?? '',
   user: null,
 };
 
@@ -26,6 +27,7 @@ export const userSlice = createSlice({
       state.user = action.payload;
       state.isAuthenticated = true;
       state.accessToken = action.payload.token;
+      localStorage.setItem(ACCESS_TOKEN, action.payload.token);
     },
   },
 });

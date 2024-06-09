@@ -9,6 +9,7 @@ import { useLoginMutation } from '../../api/auth';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../state/user';
+
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [login, { isLoading, isSuccess, data }] = useLoginMutation();
@@ -32,6 +33,7 @@ const Login = () => {
   }, [data]);
 
   const onSubmit = async (data: any) => {
+    console.log('ss', JSON.stringify(errors));
     await login(data);
   };
   return (
@@ -61,51 +63,68 @@ const Login = () => {
             <Controller
               name="username"
               control={control}
-              rules={{ required: true }}
+              rules={{
+                required: { value: true, message: 'Username is required' },
+              }}
               render={({ field }) => {
                 return (
-                  <InputWithLogo
-                    {...field}
-                    startIcon={
-                      <InputAdornment position="end">
-                        <img src="/icons/login/ic_user.svg" alt="" />
-                      </InputAdornment>
-                    }
-                    containerWidth=" mobile:w-[320px] w-[358px] "
-                    className="   "
-                    label="Username or phone "
-                    error={errors.username ? true : false}
-                  />
+                  <>
+                    <InputWithLogo
+                      {...field}
+                      startIcon={
+                        <InputAdornment position="end">
+                          <img src="/icons/login/ic_user.svg" alt="" />
+                        </InputAdornment>
+                      }
+                      containerWidth=" mobile:w-[320px] w-[358px] "
+                      className="   "
+                      label="Username or phone "
+                      error={errors.username ? true : false}
+                    />
+                    <div className=" text-red-600 text-[10px]">
+                      {errors?.username?.message}
+                    </div>
+                  </>
                 );
               }}
             />
             <Controller
               name="password"
               control={control}
-              rules={{ required: true, minLength: 6 }}
+              rules={{
+                required: { value: true, message: 'Password is required' },
+                minLength: { value: 8, message: 'Password min length is 8' },
+              }}
               render={({ field }) => {
                 return (
-                  <InputWithLogo
-                    {...field}
-                    startIcon={
-                      <InputAdornment position="end">
-                        <img src="/icons/login/ic_password.svg" alt="" />
-                      </InputAdornment>
-                    }
-                    className=""
-                    containerWidth=" mobile:w-[320px] w-[358px] "
-                    label="password"
-                    type={showPassword ? 'text' : 'password'}
-                    endAdornment={
-                      <InputAdornment
-                        onClick={() => setShowPassword(!showPassword)}
-                        position="end"
-                      >
-                        <>{showPassword ? <VisibilityOff /> : <Visibility />}</>
-                      </InputAdornment>
-                    }
-                    error={errors.password ? true : false}
-                  />
+                  <>
+                    <InputWithLogo
+                      {...field}
+                      startIcon={
+                        <InputAdornment position="end">
+                          <img src="/icons/login/ic_password.svg" alt="" />
+                        </InputAdornment>
+                      }
+                      className=""
+                      containerWidth=" mobile:w-[320px] w-[358px] "
+                      label="password"
+                      type={showPassword ? 'text' : 'password'}
+                      endAdornment={
+                        <InputAdornment
+                          onClick={() => setShowPassword(!showPassword)}
+                          position="end"
+                        >
+                          <>
+                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                          </>
+                        </InputAdornment>
+                      }
+                      error={errors.password ? true : false}
+                    />
+                    <div className=" text-red-600 text-[10px]">
+                      {errors?.password?.message}
+                    </div>
+                  </>
                 );
               }}
             />
@@ -120,6 +139,9 @@ const Login = () => {
           <div className="flex justify-between items-center">
             <Button
               variant="outlined"
+              onClick={() => {
+                navigate('/home');
+              }}
               className=" mobile:w-[140px]  w-[160px] "
               content="Register"
             />

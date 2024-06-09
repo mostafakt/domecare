@@ -7,14 +7,13 @@ const Routing = () => {
   useEffect(() => {
     eventManager.on(EVENT_ERROR, (message) => {
       ErrorNotification(message);
-
-      console.log(message);
     });
   }, []);
 
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Login />} />
     </Routes>
   );
 };

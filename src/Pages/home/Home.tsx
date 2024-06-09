@@ -1,7 +1,7 @@
 import HomeIcon from '@mui/icons-material/Home';
 import Breadcrumb from '../../Components/Breadcrumb/Breadcrumb';
 import ContentCard from '../../Components/ContentCard/ContentCard';
-import { LinkSvg } from './components/SvgIcons';
+import { EditSvg, LinkSvg } from './components/SvgIcons';
 import HomeAccordion from './components/HomeAccordion';
 import { useRef } from 'react';
 
@@ -47,7 +47,7 @@ const Home = () => {
                 <LinkSvg style=" fill-primary p-[5px] " />
               </div>
             </div>
-            <div className=" cursor-pointer mt-[10px] bg-background-heighLight rounded-2xl flex p-[12px] justify-between">
+            <div className=" cursor-pointer mt-[10px] bg-background-heighLight rounded-xl flex p-[12px] justify-between">
               <div className="text-primary text-xs">
                 Lorem Ipsum dolor sit amit
               </div>
@@ -78,17 +78,22 @@ const Home = () => {
       </div>
       {/* profile */}
       <div className=" ">
-        <div className=" flex flex-col bg-white h-[500px] rounded-lg">
-          <img src="/images/profile.png" alt="" />
+        <div className=" flex flex-col bg-white h-[500px] rounded-lg relative">
+          <div className=" absolute top-[235px] right-0 h-[30px] cursor-pointer flex items-center rounded-l-[100px] justify-center w-[50px] bg-primary ">
+            <EditSvg style="fill-white" />
+          </div>
+          <img className="cursor-pointer" src="/images/profile.png" alt="" />
           <div className="flex flex-col px-3 mt-5">
             <div className="">Lorem Ipsum</div>
             <div className=" text-gray-400 text-[12px]">
               Lorem Ipsum dolor sit amit
             </div>
             <div className=" w-full h-[2px] bg-background-main my-[5px] "></div>
-            <div className=" font-extrabold w-fit mt-3">
-              <div>Contact us</div>
-              <div className=" bg-primary h-[4px]  rounded-2xl w-[30px] rotat "></div>
+            <div className="flex justify-between">
+              <div className=" font-extrabold w-fit mt-3">
+                <div>Contact us</div>
+                <div className=" bg-primary h-[4px]  rounded-2xl w-[30px] rotat "></div>
+              </div>
             </div>
             <div className=" font-extrabold w-full flex justify-between mt-3 items-center ">
               <img src="/icons/process/ic_phone.svg" alt="" />

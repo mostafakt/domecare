@@ -10,6 +10,7 @@
 
 body {
   font-family: 'comfortaa', sans-serif;
+  overflow: hidden;
 }
 
 code {

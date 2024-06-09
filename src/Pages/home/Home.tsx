@@ -1,23 +1,13 @@
 import HomeIcon from '@mui/icons-material/Home';
-import ExpandMoreIcon from '@mui/icons-material/Home';
 import Breadcrumb from '../../Components/Breadcrumb/Breadcrumb';
 import ContentCard from '../../Components/ContentCard/ContentCard';
-import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
-
-import {
-  Accordion,
-  AccordionActions,
-  AccordionDetails,
-  AccordionSummary,
-  Button,
-  IconButton,
-  SvgIcon,
-} from '@mui/material';
-import CustomizedAccordions from '../../Components/Accordion/Accordion';
-import { EditSvg, LinkSvg } from './components/SvgIcons';
+import { LinkSvg } from './components/SvgIcons';
 import HomeAccordion from './components/HomeAccordion';
+import { useRef } from 'react';
 
 const Home = () => {
+  const scrollProducts = useRef<HTMLDivElement>(null);
+
   return (
     <div className="w-full h-full flex ">
       {/* content */}
@@ -48,7 +38,8 @@ const Home = () => {
             <img src="/icons/process/service4.svg" alt="" />
           </div>
         </div>
-        <ContentCard expand className=" overflow-hidden" title="Process">
+        {/* services card */}
+        <ContentCard expand className=" overflow-hidden" title="Services">
           <div className="flex flex-col ">
             <div className="w-full flex   flex-row-reverse ">
               {/* link button */}
@@ -66,6 +57,22 @@ const Home = () => {
             <HomeAccordion />
             <HomeAccordion />
             <HomeAccordion />
+          </div>
+        </ContentCard>
+        <ContentCard
+          fullHeight={270}
+          className=" overflow-hidden !h-[270px]"
+          title="Products"
+          scrollable
+        >
+          <div ref={scrollProducts} className="flex  gap-1 ">
+            {[1, 2, 3, 4, 5, 6, 7, 8].map(() => (
+              <img
+                className=" cursor-pointer "
+                src="/icons/process/product.svg"
+                alt=""
+              />
+            ))}
           </div>
         </ContentCard>
       </div>

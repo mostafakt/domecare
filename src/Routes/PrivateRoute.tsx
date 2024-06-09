@@ -16,7 +16,14 @@ const PrivateRoute = () => {
         ))}
         <Route path={'/home/services/add'} element={<AddServices />} />
       </Route>
-      <Route path="*" element={<></>} />
+      <Route
+        path="*"
+        element={
+          <>
+            <Navigate to="/login" state={{ from: location }} replace />;
+          </>
+        }
+      />
     </Routes>
   );
 };

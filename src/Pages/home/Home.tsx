@@ -4,10 +4,11 @@ import ContentCard from '../../Components/ContentCard/ContentCard';
 import { EditSvg, LinkSvg } from './components/SvgIcons';
 import HomeAccordion from './components/HomeAccordion';
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const scrollProducts = useRef<HTMLDivElement>(null);
-
+  const navigate = useNavigate();
   return (
     <div className="w-full h-full grid grid-cols-[1fr_200px] gap-x-6 mobile:grid-cols-1 ">
       {/* content */}
@@ -51,7 +52,14 @@ const Home = () => {
               <div className="text-primary text-xs">
                 Lorem Ipsum dolor sit amit
               </div>
-              <div className="text-primary text-xs">Action</div>
+              <div
+                onClick={() => {
+                  navigate('/home/services/add');
+                }}
+                className="text-primary text-xs"
+              >
+                Action
+              </div>
             </div>
             <HomeAccordion />
             <HomeAccordion />

@@ -28,7 +28,7 @@ const AddServices = () => {
           currentPage="Add New Services"
         />
 
-        <ContentCard className=" overflow-hidden" title="Add New Services">
+        <ContentCard className=" overflow-y-auto" title="Add New Services">
           <div className=" relative flex mt-[15px] flex-col pl-[20px] ">
             <div className=" absolute  top-[7px] mobile:top-[-50px]  w-[115px] right-[-15px] h-[50px] cursor-pointer flex items-center rounded-l-[100px] justify-center bg-primary ">
               Link

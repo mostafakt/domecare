@@ -36,7 +36,7 @@ const Login = () => {
     await login(data);
   };
   return (
-    <div className="w-screen h-full bg-background-login overflow-auto grid grid-cols-2 mobile:grid-cols-1 ">
+    <div className="w-screen h-screen bg-background-login overflow-auto grid grid-cols-2 mobile:grid-cols-1 ">
       <div className="mobile:hidden overflow-hidden  h-full">
         <img
           className="h-full w-full"
